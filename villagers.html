@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<!-- for villagers page, Meet the crew?, design codes used? for exterior? add timeline courtesy of tuong, villagers add interactive clicks on map to immediately travel to the villager  --> 
+<html> 
+    
+<head>
+<!-- meta name line will make the website responsive. How? -->
+    <meta name="viewport" content="with=device-width, initial-scale=1.0"> 
+     <title>Animal Crossing</title>
+<!-- below links to css -->
+     <link rel="stylesheet" href="style.css">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+    
+<body>
+<section class="sub-header">
+<!-- nav used for logos? -->
+    <nav>
+       <a href="index.html">
+ <!--      <img src="images/avatar.png"></a> --> 
+       <div class="nav-links" id="navLinks">
+<!-- below is a close icon from https://fontawesome.com/v4/icons/ --> 
+           <i class="fa fa-times" onclick="hideMenu()"></i>
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">VILLAGERS</a></li>
+                <li><a href="">INTERIOR</a></li>
+                <li><a href="">EXTERIOR</a></li>                
+                <li><a href="">COMPLETION LISTS</a></li>
+            </ul>
+        </div>
+<!-- below is a  menu icon from https://fontawesome.com/v4/icons/ --> 
+            <i class="fa fa-bars" onclick="showMenu()"></i>
+        </a>
+    </nav>
+</section>
+
+<!-- Villagers --> 
+<section class="villagers">
+
+    <div class="row">
+        <div class="villagers-col">
+            <h1>Meet the Crew</h1>
+            <p>Residents that were captured so far. Click on the images to jump to their profiles.</p>
+                <a href="#goose">
+                    <img src="images/goose.png"></a>
+                <a href="#petri">
+                    <img src="images/petri.png"></a>
+                <a href="#marshal">
+                    <img src="images/marshal.png"></a>
+                <a href="#cephalobot">
+                    <img src="images/cephalobot.png"></a>
+                <a href="#benedict">
+                    <img src="images/benedict.png"></a>
+                <a href="#joey">
+                    <img src="images/joey.png"></a>
+                <a href="#vesta">
+                    <img src="images/vesta.png"></a>
+                <a href="#egbert">
+                    <img src="images/egbert.png"></a>
+                <a href="#sprinkle">
+                    <img src="images/sprinkle.png"></a>
+                <a href="#octavian">
+                    <img src="images/octavian.png"></a>
+        </div>
+    </div>
+</section>
+
+    
+<!-- Profiles --> 
+<section class="profiles">
+    <div class="profiles-col">
+        <h1>Profiles</h1>
+        <p id="goose">Goose</p>
+        <p id="petri">Petri</p>
+        <p id="marshal">Marshal</p>
+            <a href="profiles-col">
+            <img src="images/3Dmarshal.png"></a>
+        <p id="cephalobot">Cephalobot</p>
+        <p id="benedict">Benedict</p>
+        <p id="joey">Joey</p>
+        <p id="vesta">Vesta</p>
+        <p id="egbert">Egbert</p>
+        <p id="sprinkle">Sprinkle</p>
+        <p id="octavian">Octavian</p>
+    </div>
+    </section>
+ 
+<!-- Footer --> 
+<section class="footer">
+    <h4>Social Media</h4>
+    <p>Facebook, Instagram, LinkedIn</p>
+    <div class="icons">
+        <i class="fa fa-facebook-official"></i>
+        <i class="fa fa-instagram"></i>
+        <i class="fa fa-linkedin-square"></i>
+    </div>
+</section>
+    
+<!-- Javascript for Toggle Menu --> 
+<script>
+
+    var navLinks = document.getElementById("navLinks");
+    function showMenu(){
+        navLinks.style.right = "0";
+    }
+    function hideMenu(){
+        navLinks.style.right = "-200px";
+    }  
+</script>  
+    
+<!-- practice for javascript
+    <div class="information">
+        <div class="overlay"></div>
+        <img src="images/avatar.png" class="mobile">
+        <div id="circle">
+            <div class="feature one">
+                <img src="images/goose.png">
+                <div>
+                    <h1>Goose</h1>
+                    <p>Personality: Jock <br> Birthday: 4th October <br> Goal: Soccer Player</p>
+                </div>
+            </div> 
+            <div class="feature two"> 
+                <img src="images/petri.png">
+                <div>
+                    <h1>Petri</h1>
+                    <p>Personality: Snooty <br> Birthday: 23rd October</p>
+                </div>
+            </div>
+            <div class="feature three"> 
+                <img src="images/marshal.png">
+                <div>
+                    <h1>Marshal</h1>
+                    <p>Personality: Smug <br> Birthday: 29th September <br> Goal: Designer</p>
+                </div>
+            </div>
+            <div class="feature four"> 
+                <img src="images/cephalobot.png">
+                <div>
+                    <h1>Cephalobot</h1>
+                    <p>Personality: Smug <br> Birthday: 1st April</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="controls">
+        <img src="images/arrow.png" id="upBtn">
+        <h3>Villagers</h3>
+        <img src="images/arrow.png" id="downBtn">
+    </div>
+ -->    
+<!-- click to switch villagers --> 
+    <script>
+        var circle = document.getElementById("circle");
+        var upBtn = document.getElementById("upBtn");
+        var downBtn = document.getElementById("downBtn");
+        
+        var rotateValue = circle.style.transform;
+        var rotateSum; 
+        
+        
+        upBtn.onclick = function()
+        {
+            rotateSum = rotateValue + "rotate(-90deg)";
+            circle.style.transform = rotateSum;
+            rotateValue = rotateSum;
+        }
+        downBtn.onclick = function()
+        {
+            rotateSum = rotateValue + "rotate(90deg)";
+            circle.style.transform = rotateSum;
+            rotateValue = rotateSum;
+        }
+    </script>
+</body>
+</html>
